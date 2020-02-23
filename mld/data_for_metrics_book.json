@@ -1,0 +1,6 @@
+{
+  "accuracy": "Accuracy is the number of correct predictions made as a ratio of all predictions made",
+  "recall": "Recall refers to the percentage of total relevant results correctly classified by your algorithm",
+  "precision": "Precision means the percentage of your results which are relevant",
+  "log loss": "The scalar probability between 0 and 1 can be seen as a measure of confidence for a prediction by an algorithm."
+}
