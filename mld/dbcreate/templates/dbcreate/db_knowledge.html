@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    <title>База знаний</title>
+{%endblock %}
+
+
+{% block page_main_header %}
+    <div class="about-section text-center ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    {% for each_row in algo_book %}
+                    <h2 class="text-white mb-4">Алгоритм {{each_row.algo_name}}</h2>
+                    <p class="text-white-50">{{each_row.algo_desc}}</p>
+                    {% endfor %}
+                </div>
+            </div>
+            <img src="img/ipad.png" class="img-fluid" alt="">
+        </div>
+    </div>
+{% endblock %}
+
