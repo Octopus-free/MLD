@@ -4,8 +4,9 @@ from . import views
 app_name = 'dbcreate'
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('contacts/', views.contacts, name='contacts'),
-    path('about/', views.about, name='about'),
-    path('db/', views.db_knowledge, name='db_knowledge')
+    path('', views.IndexFormView.as_view(), name='index'),
+    path('contacts/', views.ContactView.as_view(), name='contacts'),
+    path('about/', views.AboutView.as_view(), name='about'),
+    path('db/', views.DBKnowledgeListView.as_view(), name='db_knowledge'),
+    path('add/', views.AddInfo.as_view(), name='add_info')
 ]

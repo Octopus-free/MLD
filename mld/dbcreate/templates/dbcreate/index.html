@@ -9,9 +9,10 @@
         <div class="container d-flex h-100 align-items-center">
           <div class="mx-auto text-center">
             <h1 class="mx-auto my-0 text-uppercase">База данных для проектов по машинному обучению</h1>
+              {% csrf_token %}
               {{form.as_ul}}
               <p> </p>
-              <a href="#about" class="btn btn-primary js-scroll-trigger">Искать в БД</a>
+              <a href="{% url 'dbcreate:db_knowledge' %}" class="btn btn-primary js-scroll-trigger">Искать в БД</a>
           </div>
         </div>
       </header>

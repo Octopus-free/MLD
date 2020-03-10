@@ -10,9 +10,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    {% for each_row in algo_book %}
-                    <h2 class="text-white mb-4">Алгоритм {{each_row.algo_name}}</h2>
-                    <p class="text-white-50">{{each_row.algo_desc}}</p>
+                    {% for item in object_list %}
+                    <h2 class="text-white mb-4">Алгоритм {{item.algo_name}}</h2>
+                    <p class="text-white-50">{{item.algo_desc}}</p>
                     {% endfor %}
                 </div>
             </div>
