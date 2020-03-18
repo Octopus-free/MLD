@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+  <title>Register</title>
+{%endblock %}
+
+{% block contacts %}
+
+   <section class="contact-section bg-gray">
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-4 mb-3 mb-md-0">
+          <h1>Заполните все поля</h1>
+            <form method="post">
+              {% csrf_token %}
+              {{form.as_p}}
+              <button type="submit" class="btn btn-primary js-scroll-trigger">Зарегистрировать</button>
+          </form>
+        </div>
+       </div>
+    </div>
+  </section>
+
+{% endblock %}
