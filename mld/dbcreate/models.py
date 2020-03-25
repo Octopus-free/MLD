@@ -1,9 +1,12 @@
 from django.db import models
+from ManagingUsers.models import MLDUser
 
 
 # класс для создания таблицы AlgorithmsBook
 # справочник аглоритмов машинного обучения
 class AlgorithmsBook(models.Model):
+
+    user = models.ForeignKey(MLDUser, on_delete=models.CASCADE)
 
     # поле для хранения имени алгоритма
     algo_name = models.CharField(max_length=50, unique=True)

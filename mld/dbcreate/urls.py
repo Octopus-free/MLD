@@ -8,5 +8,5 @@ urlpatterns = [
     path('contacts/', views.ContactView.as_view(), name='contacts'),
     path('about/', views.AboutView.as_view(), name='about'),
     path('db/', views.DBKnowledgeListView.as_view(), name='db_knowledge'),
-    path('add/', views.AddInfo.as_view(), name='add_info')
+    path('add/', views.AddInfo.as_view(), name='add_info'),
 ]
