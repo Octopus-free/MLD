@@ -48,5 +48,21 @@ class OpenViewsTestCase(TestCase):
         self.assertEqual(response_login.status_code, 200)
 
 
+class PaginatorTestCase(TestCase):
 
+    def setUp(self):
 
+        self.client = Client()
+        self.user = MLDUser.objects.create_superuser(username='Testuser', password='test123', email='test112@test.com')
+
+    def test_page_three(self):
+        response_page_three = self.client.get('/db/?page=3/')
+        self.assertEqual(response_page_three.status_code, 404)
+
+    def test_page_two(self):
+
+        algo_1 = mixer.blend(AlgorithmsBook)
+        algo_2 = mixer.blend(AlgorithmsBook)
+
+        response_page_two = self.client.get('/db/?page=2/')
+        self.assertEqual(response_page_two.status_code, 200)

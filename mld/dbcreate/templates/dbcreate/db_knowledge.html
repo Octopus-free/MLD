@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load strext %}
 
 {% block page_title %}
     <title>База знаний</title>
@@ -11,13 +12,33 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     {% for item in object_list %}
-                    <h2 class="text-white mb-4">Алгоритм {{item.algo_name}}</h2>
+                    <h2 class="text-white mb-4">Алгоритм {{item.algo_name|last_cap}}</h2>
                     <p class="text-white-50">{{item.algo_desc}}</p>
                     {% endfor %}
                 </div>
             </div>
             <img src="img/ipad.png" class="img-fluid" alt="">
+
+            <div class="pagination">
+                <span class="step-links text-white mb-4">
+                    {% if page_obj.has_previous %}
+                        <a href="?page=1">&laquo; first</a>
+                        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                    {% endif %}
+
+                    <span class="current text-white mb-4">
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                    </span>
+
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}">next</a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                    {% endif %}
+                </span>
+            </div>
+
         </div>
     </div>
+
 {% endblock %}
 

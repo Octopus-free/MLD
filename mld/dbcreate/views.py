@@ -5,6 +5,7 @@ from django.views.generic import ListView, FormView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views import View
 from django.urls import reverse_lazy
+from django.core.paginator import Paginator
 
 
 class IndexFormView(FormView):
@@ -33,6 +34,7 @@ class DBKnowledgeListView(ListView):
 
     model = AlgorithmsBook
     template_name = 'dbcreate/db_knowledge.html'
+    paginate_by = 1
 
 
 class AddInfo(LoginRequiredMixin, UserPassesTestMixin, CreateView):
