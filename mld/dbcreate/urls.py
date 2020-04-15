@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 
+
 app_name = 'dbcreate'
 
 urlpatterns = [
@@ -10,3 +11,4 @@ urlpatterns = [
     path('db/', views.DBKnowledgeListView.as_view(), name='db_knowledge'),
     path('add/', views.AddInfo.as_view(), name='add_info'),
 ]
+
