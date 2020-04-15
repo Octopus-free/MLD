@@ -64,5 +64,5 @@ class PaginatorTestCase(TestCase):
         algo_1 = mixer.blend(AlgorithmsBook)
         algo_2 = mixer.blend(AlgorithmsBook)
 
-        response_page_two = self.client.get('/db/?page=2/')
+        response_page_two = self.client.get('/db/?page=2')
         self.assertEqual(response_page_two.status_code, 200)

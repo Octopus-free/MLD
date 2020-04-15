@@ -32,7 +32,8 @@ class AboutView(View):
 
 class DBKnowledgeListView(ListView):
 
-    model = AlgorithmsBook
+    # model = AlgorithmsBook
+    queryset = AlgorithmsBook.objects.select_related()
     template_name = 'dbcreate/db_knowledge.html'
     paginate_by = 1
 
