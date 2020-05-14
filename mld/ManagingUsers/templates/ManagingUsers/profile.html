@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+  <title>Токен</title>
+{% endblock %}
+
+{% block page_main_header %}
+    <div class="about-section text-center ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="text-white mb-4">Токен для пользователя {{ user.username }} </h2>
+                    <p class="text-white-50">Токен - {{ user.auth_token }} </p>
+                </div>
+            </div>
+            <img src="img/ipad.png" class="img-fluid" alt="">
+        </div>
+    </div>
+{% endblock %}
