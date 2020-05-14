@@ -66,3 +66,15 @@ class PaginatorTestCase(TestCase):
 
         response_page_two = self.client.get('/db/?page=2')
         self.assertEqual(response_page_two.status_code, 200)
+
+
+class ApiByTokenTestCase(TestCase):
+
+    def setUp(self):
+        self.client = Client()
+
+    def test_api_page(self):
+
+        response_api_page = self.client.get('/api/v0/AlgorithmsBook/')
+        self.assertEqual(response_api_page.status_code, 200)
+
